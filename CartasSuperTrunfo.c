@@ -9,8 +9,6 @@ unsigned long int populacao1;
 float area1;
 float numero_pontos_turisticos1;
 float pib1;
-float densidade_demografica1;
-float pib_per_capita1;
 
 
 char estado2;
@@ -19,7 +17,6 @@ char cidade2 [20];
 unsigned long int populacao2;
 float area2;
 float numero_pontos_turisticos2;
-float densidade_demografica2;
 float pib2;
 
 
@@ -38,7 +35,7 @@ printf("Digite a cidade da carta 1:\n");
 scanf("%s", &cidade1);
 
 printf("Digite a população da carta 1:\n");
-scanf("%d", &populacao1);
+scanf("%lu", &populacao1);
 
 printf("Digite a área da carta 1:\n");
 scanf("%f", &area1);
@@ -73,7 +70,7 @@ printf("Digite a cidade da carta 2: ");
 scanf("%s", &cidade2);
 
 printf("Digite a população da carta 2: ");
-scanf("%d", &populacao2);
+scanf("%lu", &populacao2);
 
 printf("Digite a área da carta 2: ");
 scanf("%f", &area2);
@@ -86,7 +83,7 @@ scanf("%f", &pib2);
 
 float densidade_demografica2 =  populacao2/area2;
 float pib_per_capita2 =  pib2/populacao2;
-float SuperPoder2 = (populacao2 + area2 + pib2 + numero_pontos_turisticos2 + pib2)+ (area2/populacao2);
+float SuperPoder2 = (populacao2 + area2 + pib2 + numero_pontos_turisticos2 + pib_per_capita2)+ (area2/populacao2);
 
 printf("A densidade demográfica da cidade 2 é: %.2f \n", densidade_demografica2);
 
@@ -125,9 +122,9 @@ else{
     printf("card 2 wins in super power!\n");
 }
 
-if(area1/populacao1 > area2/populacao2){
+if(densidade_demografica1 < densidade_demografica2){
     printf("card 1 wins in population density!\n");
-}                                                 // isso é o inverso da densidade demográfica
+}                                                 
 else{
     printf("card 2 wins in population density!\n");
 }
