@@ -109,54 +109,69 @@ switch(opcao){
 
 case 1:
 
-if (populacao1 > populacao2){
-    printf("Card 1 wins in population!\n");
+if (populacao1 = populacao2){
+    printf("Emparam no quesito população!\n");
 }
-else {
-    printf("card 2 wins in population!\n");
+else if( populacao1 > populacao2 ){
+    printf("Carta 1 ganhou!\n");
+}
+else{
+    printf("Carta 2 ganhou!\n");
 }
 break;
 
 case 2:
 
-if( area1 > area2 ){
-    printf("card 1 wins in area!\n");
+if( area1 = area2 ){
+    printf("Empataram no quesito área!\n");
+}
+else if( area1 > area2 ){
+    printf("Carta 1 ganhou!\n");
 }
 else{
-    printf("card 2 wins in area!\n");
+    printf("Carta 2 ganhou!\n");
 }
 
 break;
 
 case 3:
 
-if (pib1 > pib2){
-    printf("card 1 wins in pib!\n");
+if (pib1 = pib2){
+    printf("Empate no quesito PIB!\n");
 }
-else {
-    printf("card 2 wins in pib!\n");
+else if (pib1 > pib2){
+    printf("Carta 1 ganhou!\n");
+}
+else{
+    printf("Carta 2 ganhou!\n");
 }
 
 break;
 
 case 4:
 
-if (SuperPoder1 > SuperPoder2){
-    printf("Card 1 wins in super power!\n");
+if (SuperPoder1 = SuperPoder2){
+    printf("empataram no quesito super poder!\n");
+}
+else if( SuperPoder1 > SuperPoder2){
+    printf("Carta 1 ganhou!\n");
 }
 else{
-    printf("card 2 wins in super power!\n");
+    printf("Carta 2 ganhou!\n");
 }
 
 break;
 
 case 5:
 
-if(densidade_demografica1 < densidade_demografica2){
-    printf("card 1 wins in population density!\n");
+if(densidade_demografica1 = densidade_demografica2){
+    printf("Emmpataram no quesito densidade demográfica!\n");
 }                                                 
-else{
-    printf("card 2 wins in population density!\n");
+else if(densidade_demografica1 < densidade_demografica2){
+    printf("carta 1 ganhou!\n");
+} 
+    else{
+    printf("carta 2 ganhou!\n");
 }
 
 break;
