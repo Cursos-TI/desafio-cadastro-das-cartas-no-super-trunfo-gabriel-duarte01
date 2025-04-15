@@ -1,8 +1,12 @@
+//Você é a carta 1!
+
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 int main(){
 
-int opcao;
+int primeiroAtributo, segundoAtributo, resultado1, resultado2;
 
 char estado1;    
 int codigo_da_carta1;
@@ -13,13 +17,14 @@ float numero_pontos_turisticos1;
 float pib1;
 
 
-char estado2;
-int codigo_da_carta2;
-char cidade2 [20];
-unsigned long int populacao2;
-float area2;
-float numero_pontos_turisticos2;
-float pib2;
+
+char estado2 [5] = "SP";
+int codigo_da_carta2 = 2;
+char cidade2 [20] = "São Paulo";
+unsigned long int populacao2 = 80000000;
+float area2 = 789510;
+float numero_pontos_turisticos2 = 200;
+float pib2 = 745896321000;
 
 
 
@@ -62,26 +67,26 @@ printf("O super poder da cidade 1 é: %.2f \n", SuperPoder1);
 
 //Carta 2
 
-printf("Digite o estado da carta 2:\n");
-scanf(" %c", &estado2); //espaço para descartar "\n" do buffer
+printf("O estado da carta 2:\n");
+printf(" %c \n", estado2); //espaço para descartar "\n" do buffer
 
-printf("Digite o código da carta 2: ");
-scanf("%d", &codigo_da_carta2);
+printf("O código da carta 2: ");
+printf("%d \n", codigo_da_carta2);
 
-printf("Digite a cidade da carta 2: ");
-scanf("%s", &cidade2);
+printf("A cidade da carta 2: ");
+printf("%s \n", cidade2);
 
-printf("Digite a população da carta 2: ");
-scanf("%lu", &populacao2);
+printf("A população da carta 2: ");
+printf("%lu \n", populacao2);
 
-printf("Digite a área da carta 2: ");
-scanf("%f", &area2);
+printf("A área da carta 2: ");
+printf("%.2f\n", area2);
 
-printf("Digite o número de pontos turísticos da carta 2: ");
-scanf("%f", &numero_pontos_turisticos2);
+printf("O número de pontos turísticos da carta 2: ");
+printf("%.2f\n", numero_pontos_turisticos2);
 
-printf("Digite o PIB da cidade 2: ");
-scanf("%f", &pib2);
+printf("O PIB da cidade 2: ");
+printf("%.2f\n", pib2);
 
 float densidade_demografica2 =  populacao2/area2;
 float pib_per_capita2 =  pib2/populacao2;
@@ -95,84 +100,51 @@ printf("O super poder da cidade 2 é: %.2f \n", SuperPoder2);
 
 
 //card comparison
-
-printf("Qual atributo das cartas você quer comparar?\n");
+printf("Compare os atributos da sua carta com o da carta do computador!\n");
+printf("Observação: você é a carta 1!\n");
+printf("Qual o primeiro atributo das cartas você quer comparar?\n");
 printf("1. população\n");
 printf("2. área\n");
 printf("3. PIB\n");
 printf("4. super poder\n");
 printf("5. desidade demográfica\n");    
-scanf("%d", &opcao);
+scanf("%d", &primeiroAtributo);
 
 
-switch(opcao){
+switch(primeiroAtributo){
 
 case 1:
 
-if (populacao1 = populacao2){
-    printf("Emparam no quesito população!\n");
-}
-else if( populacao1 > populacao2 ){
-    printf("Carta 1 ganhou!\n");
-}
-else{
-    printf("Carta 2 ganhou!\n");
-}
+printf("Voce escolheu população!\n");
+resultado1 = populacao1 > populacao2 ? 1 : 0;
+
 break;
 
 case 2:
 
-if( area1 = area2 ){
-    printf("Empataram no quesito área!\n");
-}
-else if( area1 > area2 ){
-    printf("Carta 1 ganhou!\n");
-}
-else{
-    printf("Carta 2 ganhou!\n");
-}
+printf("Voce escolheu área!\n");
+resultado1 = area1 > area2 ? 1 : 0;
 
 break;
 
 case 3:
 
-if (pib1 = pib2){
-    printf("Empate no quesito PIB!\n");
-}
-else if (pib1 > pib2){
-    printf("Carta 1 ganhou!\n");
-}
-else{
-    printf("Carta 2 ganhou!\n");
-}
+printf("Voce escolheu PIB!\n");
+resultado1 = pib1 > pib2 ? 1 : 0;
 
 break;
 
 case 4:
 
-if (SuperPoder1 = SuperPoder2){
-    printf("empataram no quesito super poder!\n");
-}
-else if( SuperPoder1 > SuperPoder2){
-    printf("Carta 1 ganhou!\n");
-}
-else{
-    printf("Carta 2 ganhou!\n");
-}
+printf("Voce escolheu super poder!\n");
+resultado1 = SuperPoder1 > SuperPoder2 ? 1 : 0;
 
 break;
 
 case 5:
 
-if(densidade_demografica1 = densidade_demografica2){
-    printf("Emmpataram no quesito densidade demográfica!\n");
-}                                                 
-else if(densidade_demografica1 < densidade_demografica2){
-    printf("carta 1 ganhou!\n");
-} 
-    else{
-    printf("carta 2 ganhou!\n");
-}
+printf("Voce escolheu densidade demográfica!\n");
+resultado1 = densidade_demografica1 < densidade_demografica2 ? 1 : 0;
 
 break;
 
@@ -182,11 +154,63 @@ printf("opção inválida!");
 
 break;
 
-
-
-
 }
 
+
+printf("Qual o segundo atributo das cartas você quer comparar?\n");
+printf("1. população\n");
+printf("2. área\n");
+printf("3. PIB\n");
+printf("4. super poder\n");
+printf("5. desidade demográfica\n");
+scanf("%d", &segundoAtributo);
+
+if(primeiroAtributo == segundoAtributo){
+    printf("Você não pode escolher o mesmo atributo duas vezes!\n");
+    return 0;
+}
+
+//comparação do segundo atributo
+
+switch(segundoAtributo){
+
+case 1: 
+printf("Voce escolheu população!\n");
+resultado2 = populacao1 > populacao2 ? 1 : 0;
+break;
+
+case 2:
+printf("Voce escolheu área!\n");
+resultado2 = area1 > area2 ? 1 : 0;
+break;
+
+case 3:
+printf("Voce escolheu PIB!\n");
+resultado2 = pib1 > pib2 ? 1 : 0;
+break;
+
+case 4:
+printf("Voce escolheu super poder!\n");
+resultado2 = SuperPoder1 > SuperPoder2 ? 1 : 0;
+break;
+
+case 5:
+printf("Voce escolheu densidade demográfica!\n");
+resultado2 = densidade_demografica1 < densidade_demografica2 ? 1 : 0;
+break;
+
+default:
+printf("opção inválida!");
+break;
+}
+
+if(resultado1 && resultado2){
+    printf("venceu!\n");
+}else if(resultado1 != resultado2){
+    printf("Empatou!\n");
+}else{
+    printf("Perdeu!\n");
+}
 
 }
 
